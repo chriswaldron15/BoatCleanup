@@ -117,7 +117,7 @@ namespace BoatGame
 
         private void OnClick()
         {
-            var sceneCam = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/PlayerCamera.prefab");
+            var sceneCam = AssetDatabase.LoadAssetAtPath<GameObject>("Assets/Prefabs/Player Camera.prefab");
             
             SceneView.lastActiveSceneView.pivot = sceneCam.transform.position;
             SceneView.lastActiveSceneView.rotation = sceneCam.transform.rotation;

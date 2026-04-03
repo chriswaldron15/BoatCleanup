@@ -231,7 +231,7 @@ Material:
     - _SurfaceFoamMinHeight: 6.7
     - _Transparency: 1
     - _WaveScale: 0.23
-    - _Wave_Scale: 4
+    - _Wave_Scale: 2
     - _WorkflowMode: 0
     - _World_Water_Level: 0
     - _ZTest: 4

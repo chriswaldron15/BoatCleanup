@@ -42,13 +42,13 @@ namespace BoatGame
 
         private void UpdateParticles(float targetSpeed)
         {
-            var n = Mathf.InverseLerp(0f, targetSpeed, _force);
-
-            var emission = smokeParticles.emission;
-            var rate = emission.rateOverTime;
-            
-            rate.constant = Mathf.Lerp(particleEmissionRateMinMax.x, particleEmissionRateMinMax.y, n);
-            emission.rateOverTime = rate;
+            // var n = Mathf.InverseLerp(0f, targetSpeed, _force);
+            //
+            // var emission = smokeParticles.emission;
+            // var rate = emission.rateOverTime;
+            //
+            // rate.constant = Mathf.Lerp(particleEmissionRateMinMax.x, particleEmissionRateMinMax.y, n);
+            // emission.rateOverTime = rate;
         }
     }
 }

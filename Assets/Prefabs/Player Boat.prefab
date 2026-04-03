@@ -1,0 +1,621 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6750076043448006220
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5281037919681336757}
+  - component: {fileID: 5355459528666288321}
+  - component: {fileID: 491443389522267322}
+  - component: {fileID: 7668427571914378027}
+  - component: {fileID: 7545018725973429950}
+  - component: {fileID: 6958928251189185159}
+  - component: {fileID: 5986210864441434469}
+  - component: {fileID: 7337612173661461162}
+  - component: {fileID: 1130072160468520125}
+  m_Layer: 3
+  m_Name: Player Boat
+  m_TagString: Player
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5281037919681336757
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.846, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1251858617034154351}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!54 &5355459528666288321
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  serializedVersion: 5
+  m_Mass: 100
+  m_LinearDamping: 3
+  m_AngularDamping: 2
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 2
+--- !u!114 &491443389522267322
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 25027722ec9b46747ae948ce77a9c7ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.PlayerBoat
+  <Rigidbody>k__BackingField: {fileID: 5355459528666288321}
+  <Transform>k__BackingField: {fileID: 5281037919681336757}
+--- !u!114 &7668427571914378027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c92c6fbd2e6baad48a5d66d0b27fc880, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatThrottle
+  topSpeed: 3.5
+  topReverseSpeed: 1.75
+  acceleration: 6
+  smokeParticles: {fileID: 0}
+  particleEmissionRateMinMax: {x: 0, y: 50}
+--- !u!114 &7545018725973429950
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1661b1f452344c148bea5207fd111db3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatSteering
+  maxTurnAngle: 110
+  turnSpeed: 425
+--- !u!114 &6958928251189185159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ae9d49d533bab40bfd13ec995f8658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.InWaterStateDetector
+--- !u!114 &5986210864441434469
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4470de216ccae094890a8fd4168a5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BuoyancyAndWaterDragApplier
+  rigidbody: {fileID: 5355459528666288321}
+  waterDamping: 3
+  waterAngularDamping: 2
+  pushDepthRange: {x: -0.5, y: 2}
+  buoyancyPushStrength: 80
+  waterStateDetector: {fileID: 6958928251189185159}
+  treatAsAlwaysInWater: 1
+  waterMaterial: {fileID: 2100000, guid: 1f1c620af8b8e184e8da4e7994692caf, type: 2}
+--- !u!114 &7337612173661461162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efb7c0eaac700e3408dd2b53d18d2c4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BuoyancyStabilizer
+  uprightStrength: 50
+  target: {fileID: 5355459528666288321}
+--- !u!136 &1130072160468520125
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.4
+  m_Height: 4.1
+  m_Direction: 2
+  m_Center: {x: 0, y: 0.93, z: 0}
+--- !u!1001 &1645440844576605828
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5281037919681336757}
+    m_Modifications:
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -6594523043990160580, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -2221622455862490588, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -1760714182489039777, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -452137912206527988, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: -306519733438974379, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Name
+      value: Boat
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1120677706282511819, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1947781981929588399, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5800967526154409366, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5845375464428368027, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7126612787572497177, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7344358365752677612, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7552933894688688095, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 8925530247576104453, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      propertyPath: m_Layer
+      value: 3
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5845375464428368027, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3181319111664970022}
+    - targetCorrespondingSourceObject: {fileID: 1120677706282511819, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4489139037091196747}
+    - targetCorrespondingSourceObject: {fileID: -452137912206527988, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7716654482861272707}
+    - targetCorrespondingSourceObject: {fileID: 5800967526154409366, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4812545334908118494}
+    - targetCorrespondingSourceObject: {fileID: 7552933894688688095, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2553275410551146413}
+    - targetCorrespondingSourceObject: {fileID: 1947781981929588399, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5557518779121683981}
+    - targetCorrespondingSourceObject: {fileID: -2221622455862490588, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3304509757525662052}
+    - targetCorrespondingSourceObject: {fileID: -1760714182489039777, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 135488521130020864}
+    - targetCorrespondingSourceObject: {fileID: 7344358365752677612, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7448984209777808413}
+    - targetCorrespondingSourceObject: {fileID: -306519733438974379, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1218302584184604034}
+    - targetCorrespondingSourceObject: {fileID: 7126612787572497177, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5598533578852683006}
+  m_SourcePrefab: {fileID: 100100000, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+--- !u!23 &672840395521072375 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -6952520449624810893, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &728341334970382826 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7147686295248240786, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &995910000284631083 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1947781981929588399, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5557518779121683981
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 995910000284631083}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 7734218669859670516}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 4b50c442cda86bb419e48f7f99b36bc5, type: 3}
+--- !u!23 &1061178857752173731 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 1760862608745912871, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1251858617034154351 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1826409576426335055 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1120677706282511819, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4489139037091196747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1826409576426335055}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 6679569901693649149}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 76e1efe12f989a04eb83cb3e6837697a, type: 3}
+--- !u!23 &3061737605675411933 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 4370951913967234905, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &4965830516094292570 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5926714233439917278, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5067933316207530770 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5800967526154409366, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4812545334908118494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5067933316207530770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 6978225563278741964}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: f7a0c041bc517d942965774fa16e4e9e, type: 3}
+--- !u!1 &5173287666319439391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5845375464428368027, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3181319111664970022
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5173287666319439391}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 4965830516094292570}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 0bd541b725194c64c84709c9462c5d0b, type: 3}
+--- !u!23 &6421005900507183186 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3472775168118309162, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6641078567723361103 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 5403227186254849483, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6679569901693649149 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -3862013884827236743, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &6978225563278741964 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -719902388136192184, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7466552963839314555 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -1059680828572824321, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!23 &7734218669859670516 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 9043423069041217392, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7884327779877040337 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -306519733438974379, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1218302584184604034
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7884327779877040337}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 7466552963839314555}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: dcdbc85b76addc14693e88874c754ea3, type: 3}
+--- !u!1 &8028908011078104200 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -452137912206527988, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7716654482861272707
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8028908011078104200}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 728341334970382826}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 8120324603b22304aa62c280fad42864, type: 3}
+--- !u!1 &8162044787744561883 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -1760714182489039777, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &135488521130020864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8162044787744561883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 3061737605675411933}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 5ec7c0dcc17d21240aa3630a855ab25c, type: 3}
+--- !u!1 &8302844132015149672 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7344358365752677612, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7448984209777808413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8302844132015149672}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 6421005900507183186}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 6653518df4f437343b380bb65812f3b7, type: 3}
+--- !u!1 &8373061595075157405 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7126612787572497177, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &5598533578852683006
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8373061595075157405}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 6641078567723361103}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: be5f3a36335e11d42ba46526e9e53c97, type: 3}
+--- !u!1 &8646614001052109984 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -2221622455862490588, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3304509757525662052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8646614001052109984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 1061178857752173731}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: f7a0c041bc517d942965774fa16e4e9e, type: 3}
+--- !u!1 &9080575054823358811 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7552933894688688095, guid: a69c89d8dee246e44a496823bd6467c4, type: 3}
+  m_PrefabInstance: {fileID: 1645440844576605828}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2553275410551146413
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9080575054823358811}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2efae7254e6cd284b9be972cd62d0b88, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialAOApplier
+  renderer: {fileID: 672840395521072375}
+  aoStrength: 1
+  ambientOcclusionMap: {fileID: 2800000, guid: 3e0cf878c7e5de94e948e27aec624a6d, type: 3}
