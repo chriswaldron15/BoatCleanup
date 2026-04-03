@@ -131,7 +131,7 @@ PrefabInstance:
     - target: {fileID: -7511558181221131132, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
       propertyPath: 'm_Materials.Array.data[0]'
       value: 
-      objectReference: {fileID: 2100000, guid: 1f1c620af8b8e184e8da4e7994692caf, type: 2}
+      objectReference: {fileID: 2100000, guid: 68e420d0f693b984cba6a9f7d6236b6b, type: 2}
     - target: {fileID: 919132149155446097, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
       propertyPath: m_Name
       value: WaterPlane
@@ -151,7 +151,15 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7888992013238759451}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4959757062229692471}
   m_SourcePrefab: {fileID: 100100000, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
+--- !u!23 &252712515138879644 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
+  m_PrefabInstance: {fileID: 1459242215858805784}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1426229777688820723 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f3b8178f5740945418ef85ba3733774c, type: 3}
@@ -183,3 +191,17 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 200, y: 10, z: 200}
   m_Center: {x: 0, y: -5, z: 0}
+--- !u!114 &4959757062229692471
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1765741739459060041}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f79335a1570d5ac4f920d9e66ce0ca38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.MaterialRuntimeSwap
+  renderer: {fileID: 252712515138879644}
+  swapTo: {fileID: 2100000, guid: 1f1c620af8b8e184e8da4e7994692caf, type: 2}

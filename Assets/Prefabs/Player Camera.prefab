@@ -47,7 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.PlayerCamera
   <Camera>k__BackingField: {fileID: 8801958979834393846}
   cameraTransform: {fileID: 6398381375841470910}
-  followOffset: 5
+  followOffset: 2
   followDistance: 40
   lerpSpeed: 1
 --- !u!1 &2926185814705522346
