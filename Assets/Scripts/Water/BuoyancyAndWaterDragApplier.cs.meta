@@ -1,2 +1,14 @@
 fileFormatVersion: 2
 guid: 4470de216ccae094890a8fd4168a5597
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - rigidbody: {instanceID: 0}
+  - waterStateDetector: {instanceID: 0}
+  - waterMaterial: {fileID: 2100000, guid: 1f1c620af8b8e184e8da4e7994692caf, type: 2}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
