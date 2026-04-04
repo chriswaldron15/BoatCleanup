@@ -7,6 +7,8 @@ namespace BoatGame
     {
         [SerializeField, Tag] private string cleanupTag;
         [SerializeField] private int requiredAmount;
+        [SerializeField] private GameObject[] enabledOnCollect;
+        [SerializeField] private GameObject[] disableOnComplete;
 
         private int _collectedAmount;
         
@@ -14,17 +16,19 @@ namespace BoatGame
         {
             if (!other.CompareTag(cleanupTag))
                 return;
+            
+            if (_collectedAmount < enabledOnCollect.Length)
+                enabledOnCollect[_collectedAmount].SetActive(true);
 
             _collectedAmount++;
             Destroy(other.gameObject);
 
             if (_collectedAmount >= requiredAmount)
             {
-                Debug.LogError("Collected everything!");
-            }
-            else
-            {
-                Debug.LogError($"{_collectedAmount}/{requiredAmount} collected");
+                enabled = false;
+                
+                for (int i = 0, iMax = disableOnComplete.Length; i < iMax; i++)
+                    disableOnComplete[i].SetActive(false);
             }
         }
     }

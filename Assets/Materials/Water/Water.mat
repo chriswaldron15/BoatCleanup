@@ -203,7 +203,7 @@ Material:
     - _DstBlendAlpha: 10
     - _EnableInstancedPerPixelNormal: 1
     - _FoamDepth: 0
-    - _FoamThinness: 2500
+    - _FoamThinness: 500
     - _HeightCompare: 0
     - _Metallic0: 0
     - _Metallic1: 0
