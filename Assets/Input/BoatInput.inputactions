@@ -25,31 +25,13 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "ToggleMagnet",
+                    "name": "ScrollTool",
                     "type": "Button",
-                    "id": "e344faf4-4f4f-4022-a3f0-7501698537eb",
+                    "id": "fcad16a8-fc41-4ce1-b94b-7a95838e2aec",
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
-                },
-                {
-                    "name": "FireWater",
-                    "type": "Button",
-                    "id": "3ac749de-d549-45a5-9626-d40ae0b49cf9",
-                    "expectedControlType": "",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Aim",
-                    "type": "Value",
-                    "id": "f46b24dc-3c22-4a50-b9ae-5967f6ef190f",
-                    "expectedControlType": "Vector2",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": true
                 }
             ],
             "bindings": [
@@ -186,59 +168,37 @@
                     "isPartOfComposite": true
                 },
                 {
-                    "name": "",
-                    "id": "9c4268e7-a718-4f6f-8430-5ac05c7564ba",
+                    "name": "1D Axis",
+                    "id": "60372e6f-67d5-4702-873e-417d396361f4",
+                    "path": "1DAxis",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollTool",
+                    "isComposite": true,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "negative",
+                    "id": "a02db80c-e911-47c5-afaf-eded1f383cb8",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "ScrollTool",
+                    "isComposite": false,
+                    "isPartOfComposite": true
+                },
+                {
+                    "name": "positive",
+                    "id": "98c1abd7-8fb8-4732-97fd-5e2e8f28bd16",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "ToggleMagnet",
+                    "groups": "",
+                    "action": "ScrollTool",
                     "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "ccac422c-30e4-4d86-a8b2-2320df111970",
-                    "path": "<Mouse>/rightButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "ToggleMagnet",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "8268a031-a04f-4af6-ac6e-d372bee7c090",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "FireWater",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "730d27a8-89f4-4433-be18-98e662af5115",
-                    "path": "<Mouse>/leftButton",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "FireWater",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "61363597-2497-467a-805d-b81f711f60df",
-                    "path": "<Mouse>/position",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": ";Keyboard&Mouse",
-                    "action": "Aim",
-                    "isComposite": false,
-                    "isPartOfComposite": false
+                    "isPartOfComposite": true
                 }
             ]
         }

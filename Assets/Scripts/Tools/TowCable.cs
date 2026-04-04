@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BoatGame
 {
-    public class TowCable : MonoBehaviour
+    public class TowCable : Tool
     {
         private const string TowableTag = "Towable";
 
@@ -30,6 +30,22 @@ namespace BoatGame
             _towTarget = other.attachedRigidbody;
             spring.connectedBody = _towTarget;
             spring.connectedAnchor = Vector3.zero;
+        }
+
+        public override void OnActivate()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public override void OnDeactivate()
+        {
+            if (_towTarget != null)
+            {
+                spring.connectedBody = null;
+                _towTarget = null;
+            }
+            
+            gameObject.SetActive(false);
         }
     }
 }

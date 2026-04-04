@@ -165,6 +165,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 833275253856271178}
+  - component: {fileID: 2442242826386197863}
   m_Layer: 3
   m_Name: Vacuum
   m_TagString: Untagged
@@ -189,6 +190,18 @@ Transform:
   - {fileID: 4225300685655678590}
   m_Father: {fileID: 5281037919681336757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2442242826386197863
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4560905078563967738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154a6c56902906448f31ebab2e45203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.GenericTool
 --- !u!1 &4643529992209243461
 GameObject:
   m_ObjectHideFlags: 0
@@ -437,6 +450,7 @@ GameObject:
   - component: {fileID: 5986210864441434469}
   - component: {fileID: 7337612173661461162}
   - component: {fileID: 1130072160468520125}
+  - component: {fileID: 6803027035059923148}
   m_Layer: 3
   m_Name: Player Boat
   m_TagString: Player
@@ -604,6 +618,22 @@ CapsuleCollider:
   m_Height: 4.1
   m_Direction: 2
   m_Center: {x: 0, y: 0.93, z: 0}
+--- !u!114 &6803027035059923148
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7effd55b734375443940610132659237, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.ToolSwitcher
+  tools:
+  - {fileID: 1380279913303795275}
+  - {fileID: 2442242826386197863}
+  - {fileID: 3945283385102064029}
 --- !u!1 &7995897114098612133
 GameObject:
   m_ObjectHideFlags: 0
@@ -863,6 +893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6847293272490807351}
+  - component: {fileID: 1380279913303795275}
   m_Layer: 3
   m_Name: Scoop
   m_TagString: Untagged
@@ -887,6 +918,18 @@ Transform:
   - {fileID: 2888225656505199689}
   m_Father: {fileID: 5281037919681336757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1380279913303795275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9006543083943475947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8154a6c56902906448f31ebab2e45203, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.GenericTool
 --- !u!1001 &1645440844576605828
 PrefabInstance:
   m_ObjectHideFlags: 0

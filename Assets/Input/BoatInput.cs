@@ -113,31 +113,13 @@ namespace BoatGame
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""ToggleMagnet"",
+                    ""name"": ""ScrollTool"",
                     ""type"": ""Button"",
-                    ""id"": ""e344faf4-4f4f-4022-a3f0-7501698537eb"",
+                    ""id"": ""fcad16a8-fc41-4ce1-b94b-7a95838e2aec"",
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""FireWater"",
-                    ""type"": ""Button"",
-                    ""id"": ""3ac749de-d549-45a5-9626-d40ae0b49cf9"",
-                    ""expectedControlType"": """",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": false
-                },
-                {
-                    ""name"": ""Aim"",
-                    ""type"": ""Value"",
-                    ""id"": ""f46b24dc-3c22-4a50-b9ae-5967f6ef190f"",
-                    ""expectedControlType"": ""Vector2"",
-                    ""processors"": """",
-                    ""interactions"": """",
-                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -274,59 +256,37 @@ namespace BoatGame
                     ""isPartOfComposite"": true
                 },
                 {
-                    ""name"": """",
-                    ""id"": ""9c4268e7-a718-4f6f-8430-5ac05c7564ba"",
+                    ""name"": ""1D Axis"",
+                    ""id"": ""60372e6f-67d5-4702-873e-417d396361f4"",
+                    ""path"": ""1DAxis"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollTool"",
+                    ""isComposite"": true,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": ""negative"",
+                    ""id"": ""a02db80c-e911-47c5-afaf-eded1f383cb8"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""ScrollTool"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": ""positive"",
+                    ""id"": ""98c1abd7-8fb8-4732-97fd-5e2e8f28bd16"",
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""ToggleMagnet"",
+                    ""groups"": """",
+                    ""action"": ""ScrollTool"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""ccac422c-30e4-4d86-a8b2-2320df111970"",
-                    ""path"": ""<Mouse>/rightButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""ToggleMagnet"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""8268a031-a04f-4af6-ac6e-d372bee7c090"",
-                    ""path"": ""<Keyboard>/space"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""FireWater"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""730d27a8-89f4-4433-be18-98e662af5115"",
-                    ""path"": ""<Mouse>/leftButton"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""FireWater"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": """",
-                    ""id"": ""61363597-2497-467a-805d-b81f711f60df"",
-                    ""path"": ""<Mouse>/position"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": "";Keyboard&Mouse"",
-                    ""action"": ""Aim"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": false
+                    ""isPartOfComposite"": true
                 }
             ]
         }
@@ -398,9 +358,7 @@ namespace BoatGame
             m_BoatControls = asset.FindActionMap("BoatControls", throwIfNotFound: true);
             m_BoatControls_Steer = m_BoatControls.FindAction("Steer", throwIfNotFound: true);
             m_BoatControls_Throttle = m_BoatControls.FindAction("Throttle", throwIfNotFound: true);
-            m_BoatControls_ToggleMagnet = m_BoatControls.FindAction("ToggleMagnet", throwIfNotFound: true);
-            m_BoatControls_FireWater = m_BoatControls.FindAction("FireWater", throwIfNotFound: true);
-            m_BoatControls_Aim = m_BoatControls.FindAction("Aim", throwIfNotFound: true);
+            m_BoatControls_ScrollTool = m_BoatControls.FindAction("ScrollTool", throwIfNotFound: true);
         }
 
         ~@BoatInput()
@@ -483,9 +441,7 @@ namespace BoatGame
         private List<IBoatControlsActions> m_BoatControlsActionsCallbackInterfaces = new List<IBoatControlsActions>();
         private readonly InputAction m_BoatControls_Steer;
         private readonly InputAction m_BoatControls_Throttle;
-        private readonly InputAction m_BoatControls_ToggleMagnet;
-        private readonly InputAction m_BoatControls_FireWater;
-        private readonly InputAction m_BoatControls_Aim;
+        private readonly InputAction m_BoatControls_ScrollTool;
         /// <summary>
         /// Provides access to input actions defined in input action map "BoatControls".
         /// </summary>
@@ -506,17 +462,9 @@ namespace BoatGame
             /// </summary>
             public InputAction @Throttle => m_Wrapper.m_BoatControls_Throttle;
             /// <summary>
-            /// Provides access to the underlying input action "BoatControls/ToggleMagnet".
+            /// Provides access to the underlying input action "BoatControls/ScrollTool".
             /// </summary>
-            public InputAction @ToggleMagnet => m_Wrapper.m_BoatControls_ToggleMagnet;
-            /// <summary>
-            /// Provides access to the underlying input action "BoatControls/FireWater".
-            /// </summary>
-            public InputAction @FireWater => m_Wrapper.m_BoatControls_FireWater;
-            /// <summary>
-            /// Provides access to the underlying input action "BoatControls/Aim".
-            /// </summary>
-            public InputAction @Aim => m_Wrapper.m_BoatControls_Aim;
+            public InputAction @ScrollTool => m_Wrapper.m_BoatControls_ScrollTool;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -549,15 +497,9 @@ namespace BoatGame
                 @Throttle.started += instance.OnThrottle;
                 @Throttle.performed += instance.OnThrottle;
                 @Throttle.canceled += instance.OnThrottle;
-                @ToggleMagnet.started += instance.OnToggleMagnet;
-                @ToggleMagnet.performed += instance.OnToggleMagnet;
-                @ToggleMagnet.canceled += instance.OnToggleMagnet;
-                @FireWater.started += instance.OnFireWater;
-                @FireWater.performed += instance.OnFireWater;
-                @FireWater.canceled += instance.OnFireWater;
-                @Aim.started += instance.OnAim;
-                @Aim.performed += instance.OnAim;
-                @Aim.canceled += instance.OnAim;
+                @ScrollTool.started += instance.OnScrollTool;
+                @ScrollTool.performed += instance.OnScrollTool;
+                @ScrollTool.canceled += instance.OnScrollTool;
             }
 
             /// <summary>
@@ -575,15 +517,9 @@ namespace BoatGame
                 @Throttle.started -= instance.OnThrottle;
                 @Throttle.performed -= instance.OnThrottle;
                 @Throttle.canceled -= instance.OnThrottle;
-                @ToggleMagnet.started -= instance.OnToggleMagnet;
-                @ToggleMagnet.performed -= instance.OnToggleMagnet;
-                @ToggleMagnet.canceled -= instance.OnToggleMagnet;
-                @FireWater.started -= instance.OnFireWater;
-                @FireWater.performed -= instance.OnFireWater;
-                @FireWater.canceled -= instance.OnFireWater;
-                @Aim.started -= instance.OnAim;
-                @Aim.performed -= instance.OnAim;
-                @Aim.canceled -= instance.OnAim;
+                @ScrollTool.started -= instance.OnScrollTool;
+                @ScrollTool.performed -= instance.OnScrollTool;
+                @ScrollTool.canceled -= instance.OnScrollTool;
             }
 
             /// <summary>
@@ -704,26 +640,12 @@ namespace BoatGame
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnThrottle(InputAction.CallbackContext context);
             /// <summary>
-            /// Method invoked when associated input action "ToggleMagnet" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// Method invoked when associated input action "ScrollTool" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
             /// </summary>
             /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnToggleMagnet(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "FireWater" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnFireWater(InputAction.CallbackContext context);
-            /// <summary>
-            /// Method invoked when associated input action "Aim" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
-            /// </summary>
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
-            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
-            void OnAim(InputAction.CallbackContext context);
+            void OnScrollTool(InputAction.CallbackContext context);
         }
     }
 }
