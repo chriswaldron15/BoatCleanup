@@ -93,9 +93,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c92c6fbd2e6baad48a5d66d0b27fc880, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatThrottle
-  topSpeed: 3.5
-  topReverseSpeed: 1.75
-  acceleration: 6
+  topSpeed: 12
+  topReverseSpeed: 8
+  acceleration: 24
   smokeParticles: {fileID: 0}
   particleEmissionRateMinMax: {x: 0, y: 50}
 --- !u!114 &7545018725973429950
