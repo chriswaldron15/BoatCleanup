@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace BoatGame
@@ -11,6 +10,11 @@ namespace BoatGame
         {
             if (!other.CompareTag(VacuumTag))
                 return;
+
+            if (!other.TryGetComponent(out Vacuumable vacuumable))
+                return;
+            
+            vacuumable.OnVacuumed();
         }
     }
 }
