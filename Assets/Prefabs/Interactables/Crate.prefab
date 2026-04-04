@@ -77,7 +77,7 @@ MonoBehaviour:
   rigidbody: {fileID: 5299270494588140474}
   waterDamping: 2
   waterAngularDamping: 1
-  pushDepthRange: {x: -0.5, y: 1}
+  pushDepthRange: {x: -1, y: 2}
   buoyancyPushStrength: 75
   waterStateDetector: {fileID: 5039039329308286782}
   treatAsAlwaysInWater: 0

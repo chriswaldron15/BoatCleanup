@@ -3,14 +3,14 @@ using UnityEngine;
 
 namespace BoatGame
 {
-    public class VacuumCollectible : MonoBehaviour
+    public class Vacuum : MonoBehaviour
     {
+        private const string VacuumTag = "VacuumCollectable";
+        
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag("Player"))
+            if (!other.CompareTag(VacuumTag))
                 return;
-            
-            gameObject.SetActive(false);
         }
     }
 }
