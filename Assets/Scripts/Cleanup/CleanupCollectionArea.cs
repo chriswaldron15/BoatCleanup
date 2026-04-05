@@ -1,5 +1,6 @@
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoatGame
 {
@@ -9,6 +10,7 @@ namespace BoatGame
         [SerializeField] private int requiredAmount;
         [SerializeField] private GameObject[] enabledOnCollect;
         [SerializeField] private GameObject[] disableOnComplete;
+        [SerializeField] private UnityEvent onComplete; 
 
         private int _collectedAmount;
         
@@ -29,6 +31,8 @@ namespace BoatGame
                 
                 for (int i = 0, iMax = disableOnComplete.Length; i < iMax; i++)
                     disableOnComplete[i].SetActive(false);
+                
+                onComplete?.Invoke();
             }
         }
     }

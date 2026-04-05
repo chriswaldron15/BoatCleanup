@@ -25,14 +25,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774076203384253452}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.27781588, y: -0.36497167, z: 0.1150751, w: 0.8811196}
+  m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
   m_LocalPosition: {x: 11.584559, y: 11.471527, z: -11.58456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9142420892926175449}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 35, y: -45, z: 0}
+  m_LocalEulerAnglesHint: {x: 45, y: -45, z: 0}
 --- !u!114 &7986032952943049266
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -47,8 +47,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.PlayerCamera
   <Camera>k__BackingField: {fileID: 8801958979834393846}
   cameraTransform: {fileID: 6398381375841470910}
-  followOffset: 0
-  followDistance: 40
+  followOffset: -1
+  followDistance: 45
   lerpSpeed: 3
 --- !u!1 &2926185814705522346
 GameObject:
@@ -115,10 +115,10 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.1
+  near clip plane: 10
   far clip plane: 300
-  field of view: 73.8
-  orthographic: 1
+  field of view: 35
+  orthographic: 0
   orthographic size: 14
   m_Depth: -1
   m_CullingMask:

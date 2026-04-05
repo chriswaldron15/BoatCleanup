@@ -2,7 +2,7 @@ using UnityEngine;
 
 namespace BoatGame
 {
-    public class CameraLookAtPoint : NormalizedPuzzleReceiver
+    public class CameraLookAtPoint : MonoBehaviour
     {
         [field: SerializeField] public Transform Target { get; private set; }
         [field: SerializeField] public float OrthoSize { get; private set; }
@@ -10,7 +10,16 @@ namespace BoatGame
 
         private bool _isDisabled, _isTriggered;
         private short _triggerCount;
-        
+
+        private void OnDisable()
+        {
+            if (_triggerCount > 0)
+            {
+                _triggerCount = 0;
+                Exit();
+            }
+        }
+
         private void OnTriggerEnter(Collider other)
         {
             _triggerCount++;
@@ -25,32 +34,23 @@ namespace BoatGame
         private void OnTriggerExit(Collider other)
         {
             _triggerCount--;
-            
+
             if (_triggerCount < 0)
+            {
                 Debug.LogError("Trigger count went below zero", this);
+                _triggerCount = 0;
+            }
 
             if (_triggerCount <= 0)
             {
-                _isTriggered = false;
-                PlayerCamera.Instance.ClearLookAtOverride(this);
+                Exit();
             }
         }
 
-        public override void SetStateImmediate(float normalizedCompletionValue)
+        private void Exit()
         {
-            UpdateState(normalizedCompletionValue);
-        }
-
-        public override void UpdateState(float normalizedCompletionValue)
-        {
-            if (normalizedCompletionValue >= 1f)
-            {
-                _isDisabled = true;
-                gameObject.SetActive(false);
-                
-                if (_isTriggered)
-                    OnTriggerExit(null);
-            }
+            _isTriggered = false;
+            PlayerCamera.Instance.ClearLookAtOverride(this);
         }
     }
 }

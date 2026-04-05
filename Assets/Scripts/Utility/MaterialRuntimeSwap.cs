@@ -1,3 +1,4 @@
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace BoatGame
@@ -12,5 +13,14 @@ namespace BoatGame
             renderer.sharedMaterial = swapTo;
             Destroy(this);
         }
+
+        #if UNITY_EDITOR
+        [Button]
+        private void SwapNow()
+        {
+            UnityEditor.Undo.RecordObject(gameObject, "Swapped normal water");
+            renderer.sharedMaterial = swapTo;
+        }
+        #endif
     }
 }
