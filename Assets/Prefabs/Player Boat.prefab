@@ -451,6 +451,8 @@ GameObject:
   - component: {fileID: 7337612173661461162}
   - component: {fileID: 1130072160468520125}
   - component: {fileID: 6803027035059923148}
+  - component: {fileID: 9052785760647537793}
+  - component: {fileID: 4413161742933498016}
   m_Layer: 3
   m_Name: Player Boat
   m_TagString: Player
@@ -487,7 +489,7 @@ Rigidbody:
   serializedVersion: 5
   m_Mass: 100
   m_LinearDamping: 3
-  m_AngularDamping: 2
+  m_AngularDamping: 6
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
@@ -547,8 +549,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1661b1f452344c148bea5207fd111db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatSteering
-  maxTurnAngle: 110
-  turnSpeed: 425
+  maxTurnAngle: 540
+  turnSpeed: 540
 --- !u!114 &6958928251189185159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -575,7 +577,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BuoyancyAndWaterDragApplier
   rigidbody: {fileID: 5355459528666288321}
   waterDamping: 3
-  waterAngularDamping: 2
+  waterAngularDamping: 6
   pushDepthRange: {x: -0.5, y: 2}
   buoyancyPushStrength: 150
   waterStateDetector: {fileID: 6958928251189185159}
@@ -634,6 +636,50 @@ MonoBehaviour:
   - {fileID: 1380279913303795275}
   - {fileID: 2442242826386197863}
   - {fileID: 3945283385102064029}
+--- !u!65 &9052785760647537793
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 0
+  serializedVersion: 3
+  m_Size: {x: 3.054369, y: 1.1404667, z: 1.4176078}
+  m_Center: {x: 0, y: 0.5724635, z: 2.6861305}
+--- !u!136 &4413161742933498016
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 128
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.71
+  m_Height: 3.14
+  m_Direction: 0
+  m_Center: {x: 0, y: 0.58, z: 2.65}
 --- !u!1 &7995897114098612133
 GameObject:
   m_ObjectHideFlags: 0

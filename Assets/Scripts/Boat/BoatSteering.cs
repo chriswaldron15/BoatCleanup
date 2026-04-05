@@ -26,7 +26,8 @@ namespace BoatGame
             if (Mathf.Approximately(_turnForce, 0f))
                 return;
 
-            PlayerBoat.Instance.Rigidbody.MoveRotation(PlayerBoat.Instance.Rigidbody.rotation * Quaternion.Euler(0f, _turnForce * Time.fixedDeltaTime, 0f));
+            //PlayerBoat.Instance.Rigidbody.MoveRotation(PlayerBoat.Instance.Rigidbody.rotation * Quaternion.Euler(0f, _turnForce * Time.fixedDeltaTime, 0f));
+            PlayerBoat.Instance.Rigidbody.AddTorque(Vector3.up * (_turnForce * Time.fixedDeltaTime), ForceMode.Acceleration);
         }
     }
 }
