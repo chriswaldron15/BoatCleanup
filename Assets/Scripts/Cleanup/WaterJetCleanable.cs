@@ -1,4 +1,5 @@
 using System;
+using NaughtyAttributes;
 using UnityEngine;
 
 namespace BoatGame
@@ -30,6 +31,7 @@ namespace BoatGame
             return _cleanTime >= requiredJetTime;
         }
 
+        [Button]
         private void UpdateMaterial()
         {
             float cleanAmount = _cleanTime / requiredJetTime;
