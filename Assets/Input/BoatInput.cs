@@ -120,6 +120,15 @@ namespace BoatGame
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Fire"",
+                    ""type"": ""Button"",
+                    ""id"": ""fc6eefa8-a67c-48c9-95d2-d86d5a579559"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -272,7 +281,7 @@ namespace BoatGame
                     ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""ScrollTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
@@ -283,10 +292,21 @@ namespace BoatGame
                     ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": """",
+                    ""groups"": "";Keyboard&Mouse"",
                     ""action"": ""ScrollTool"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1abbafdc-5916-4718-95a5-c8f0af0de7c4"",
+                    ""path"": ""<Keyboard>/space"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Fire"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -359,6 +379,7 @@ namespace BoatGame
             m_BoatControls_Steer = m_BoatControls.FindAction("Steer", throwIfNotFound: true);
             m_BoatControls_Throttle = m_BoatControls.FindAction("Throttle", throwIfNotFound: true);
             m_BoatControls_ScrollTool = m_BoatControls.FindAction("ScrollTool", throwIfNotFound: true);
+            m_BoatControls_Fire = m_BoatControls.FindAction("Fire", throwIfNotFound: true);
         }
 
         ~@BoatInput()
@@ -442,6 +463,7 @@ namespace BoatGame
         private readonly InputAction m_BoatControls_Steer;
         private readonly InputAction m_BoatControls_Throttle;
         private readonly InputAction m_BoatControls_ScrollTool;
+        private readonly InputAction m_BoatControls_Fire;
         /// <summary>
         /// Provides access to input actions defined in input action map "BoatControls".
         /// </summary>
@@ -465,6 +487,10 @@ namespace BoatGame
             /// Provides access to the underlying input action "BoatControls/ScrollTool".
             /// </summary>
             public InputAction @ScrollTool => m_Wrapper.m_BoatControls_ScrollTool;
+            /// <summary>
+            /// Provides access to the underlying input action "BoatControls/Fire".
+            /// </summary>
+            public InputAction @Fire => m_Wrapper.m_BoatControls_Fire;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -500,6 +526,9 @@ namespace BoatGame
                 @ScrollTool.started += instance.OnScrollTool;
                 @ScrollTool.performed += instance.OnScrollTool;
                 @ScrollTool.canceled += instance.OnScrollTool;
+                @Fire.started += instance.OnFire;
+                @Fire.performed += instance.OnFire;
+                @Fire.canceled += instance.OnFire;
             }
 
             /// <summary>
@@ -520,6 +549,9 @@ namespace BoatGame
                 @ScrollTool.started -= instance.OnScrollTool;
                 @ScrollTool.performed -= instance.OnScrollTool;
                 @ScrollTool.canceled -= instance.OnScrollTool;
+                @Fire.started -= instance.OnFire;
+                @Fire.performed -= instance.OnFire;
+                @Fire.canceled -= instance.OnFire;
             }
 
             /// <summary>
@@ -646,6 +678,13 @@ namespace BoatGame
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnScrollTool(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Fire" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnFire(InputAction.CallbackContext context);
         }
     }
 }

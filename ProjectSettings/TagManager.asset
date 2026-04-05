@@ -7,6 +7,7 @@ TagManager:
   - Crate
   - VacuumCollectable
   - Towable
+  - WaterJetable
   layers:
   - Default
   - TransparentFX
