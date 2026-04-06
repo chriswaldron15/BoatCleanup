@@ -5,13 +5,12 @@ namespace BoatGame
     public class WaterJetRenderer : MonoBehaviour
     {
         [SerializeField] private LineRenderer lineRenderer;
-        [SerializeField] private GameObject reticule;
+        [SerializeField] private ToolTarget reticule;
         [SerializeField] private ParticleSystem particles;
 
         private void Awake()
         {
             lineRenderer.enabled = false;
-            reticule.SetActive(false);
             
             reticule.transform.SetParent(null);
             particles.transform.SetParent(null);
@@ -43,17 +42,12 @@ namespace BoatGame
 
         public void AimAt(WaterJetable bestTarget)
         {
-            var targetPosition = bestTarget.transform.position;
-            var forward = (transform.position - targetPosition).normalized;
-            
-            reticule.transform.forward = forward;
-            reticule.transform.position = targetPosition + forward * 0.5f;
-            reticule.SetActive(true);
+            reticule.PositionAndShow(bestTarget.transform.position);
         }
 
         public void StopAiming()
         {
-            reticule.SetActive(false);
+            reticule.Hide();
         }
     }
 }

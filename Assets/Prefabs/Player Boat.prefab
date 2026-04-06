@@ -192,7 +192,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.TowCable
   rigidbody: {fileID: 6230813696174970309}
   spring: {fileID: 3796143775356341641}
+  detachDistance: 15
   towRopeRenderer: {fileID: 2986748807801654435}
+  toolTarget: {fileID: 5075260904238863925}
 --- !u!1 &1913271661545987563
 GameObject:
   m_ObjectHideFlags: 0
@@ -541,7 +543,6 @@ Transform:
   m_Children:
   - {fileID: 8623422557918350924}
   - {fileID: 8185843073812153977}
-  - {fileID: 5167679917499660811}
   - {fileID: 104491632980072116}
   - {fileID: 1511350232066446193}
   m_Father: {fileID: 5281037919681336757}
@@ -572,7 +573,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetRenderer
   lineRenderer: {fileID: 3556893874784588904}
-  reticule: {fileID: 8704524087860307556}
+  reticule: {fileID: 5075260904238863925}
   particles: {fileID: 7564191559648542404}
 --- !u!54 &7539372579464970572
 Rigidbody:
@@ -923,6 +924,7 @@ Transform:
   - {fileID: 833275253856271178}
   - {fileID: 423439413775935638}
   - {fileID: 3026066117968915514}
+  - {fileID: 5167679917499660811}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6803027035059923148
@@ -6221,8 +6223,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5167679917499660811}
+  - component: {fileID: 5075260904238863925}
   m_Layer: 3
-  m_Name: Jet Reticule
+  m_Name: Reticule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6236,14 +6239,27 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8704524087860307556}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3815793080897438492}
-  m_Father: {fileID: 3026066117968915514}
+  m_Father: {fileID: 5281037919681336757}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5075260904238863925
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8704524087860307556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f9e0ff333ebbafb46861afc51e00e0e3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.ToolTarget
+  t: {fileID: 5167679917499660811}
 --- !u!1 &9006543083943475947
 GameObject:
   m_ObjectHideFlags: 0
