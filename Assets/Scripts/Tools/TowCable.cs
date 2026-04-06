@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -14,7 +15,7 @@ namespace BoatGame
         [SerializeField] private ToolTarget toolTarget;
         
         private Towable _towTarget;
-        private readonly List<Towable> _targets = new List<Towable>(4);
+        private readonly HashSet<Towable> _targets = new HashSet<Towable>(4);
         private BoatInput _boatInput;
 
         private void Awake()
@@ -40,15 +41,15 @@ namespace BoatGame
             Towable bestTarget = null;
             float bestScore = float.MaxValue;
 
-            for (int i = 0, iMax = _targets.Count; i < iMax; i++)
+            foreach (var target in _targets)
             {
-                var score = _targets[i].Score();
+                var score = target.Score();
 
                 if (score < bestScore)
                 {
                     bestScore = score;
-                    bestTarget = _targets[i];
-                }
+                    bestTarget = target;
+                }   
             }
 
             if (bestTarget == null)
@@ -82,6 +83,17 @@ namespace BoatGame
                 return;
 
             _targets.Add(towable);
+        }
+
+        private void OnTriggerExit(Collider other)
+        {
+            if (!other.CompareTag(TowableTag))
+                return;
+
+            if (!other.attachedRigidbody.TryGetComponent(out Towable towable))
+                return;
+
+            _targets.Remove(towable);
         }
 
         private void AttachTo(Towable target)

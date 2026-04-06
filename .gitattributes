@@ -30,6 +30,7 @@
 # Unity YAML files
 *.anim                  unity-yaml
 *.asset                 unity-yaml
+*SDF.asset              lfs
 *.brush                 unity-yaml
 *.controller            unity-yaml
 *.flare                 unity-yaml
