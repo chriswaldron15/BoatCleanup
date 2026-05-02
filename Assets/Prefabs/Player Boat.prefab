@@ -986,7 +986,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1661b1f452344c148bea5207fd111db3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatSteering
-  maxTurnAngle: 540
+  maxTurnAngle: 630
   turnSpeed: 2160
 --- !u!114 &6958928251189185159
 MonoBehaviour:
@@ -1045,7 +1045,7 @@ Rigidbody:
   m_Mass: 100
   m_LinearDamping: 3
   m_AngularDamping: 6
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_CenterOfMass: {x: 0, y: 0, z: -1}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
   m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
   m_IncludeLayers:

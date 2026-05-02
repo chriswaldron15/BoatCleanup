@@ -7,7 +7,7 @@ namespace BoatGame
     {
         [SerializeField] private Tool[] tools;
 
-        private int _currentToolIndex = -1;
+        private int _currentToolIndex = 0;
         private BoatInput _input;
 
         private void Awake()
@@ -15,6 +15,8 @@ namespace BoatGame
             _input = new BoatInput();
             _input.Enable();
             _input.BoatControls.ScrollTool.performed += OnScroll;
+            
+            tools[_currentToolIndex].OnActivate();
         }
 
         private void OnDestroy()
@@ -32,13 +34,12 @@ namespace BoatGame
         {
             var nextIndex = isRight ? _currentToolIndex + 1 : _currentToolIndex - 1;
 
-            if (nextIndex < -1)
+            if (nextIndex < 0)
                 nextIndex = tools.Length - 1;
             else if (nextIndex >= tools.Length)
-                nextIndex = -1;
+                nextIndex = 0;
             
-            if (_currentToolIndex != -1)
-                tools[_currentToolIndex].OnDeactivate();
+            tools[_currentToolIndex].OnDeactivate();
             
             if (nextIndex != -1)
                 tools[nextIndex].OnActivate();

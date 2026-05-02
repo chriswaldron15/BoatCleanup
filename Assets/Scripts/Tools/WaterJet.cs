@@ -1,5 +1,5 @@
-using System;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 namespace BoatGame
@@ -10,7 +10,7 @@ namespace BoatGame
 
         [SerializeField] private new WaterJetRenderer renderer;
         
-        private readonly HashSet<WaterJetable> _jetables = new();
+        private readonly List<(WaterJetable jetable, int triggerCount)> _jetables = new();
         private BoatInput _boatInput;
 
         private void Awake()
@@ -32,12 +32,12 @@ namespace BoatGame
             
             foreach (var j in _jetables)
             {
-                var score = j.Score();
+                var score = j.jetable.Score();
 
                 if (score < bestScore)
                 {
                     bestScore = score;
-                    bestTarget = j;
+                    bestTarget = j.jetable;
                 }
             }
 
@@ -66,7 +66,12 @@ namespace BoatGame
             renderer.ShootAt(bestTarget);
 
             if (bestTarget.IsComplete())
-                _jetables.Remove(bestTarget);
+            {
+                var index = GetIndex(bestTarget);
+                
+                if (index != -1)
+                    _jetables.RemoveAtSwapBack(index);
+            }
         }
 
         private void StopJet()
@@ -81,9 +86,16 @@ namespace BoatGame
 
             if (!other.TryGetComponent(out WaterJetable jetable))
                 return;
-            
+
             if (!jetable.IsComplete())
-                _jetables.Add(jetable);
+            {
+                var index = GetIndex(jetable);
+
+                if (index == -1)
+                    _jetables.Add((jetable, 1));
+                else
+                    _jetables[index] = (jetable, _jetables[index].triggerCount + 1);
+            }
         }
 
         private void OnTriggerExit(Collider other)
@@ -93,8 +105,26 @@ namespace BoatGame
 
             if (!other.TryGetComponent(out WaterJetable jetable))
                 return;
-            
-            _jetables.Remove(jetable);
+
+            var index = GetIndex(jetable);
+
+            if (index == -1)
+                return;
+
+            if (_jetables[index].triggerCount == 1)
+                _jetables.RemoveAtSwapBack(index);
+            else _jetables[index] = (jetable, _jetables[index].triggerCount - 1);
+        }
+
+        private int GetIndex(WaterJetable jetable)
+        {
+            for (int i = 0, iMax = _jetables.Count; i < iMax; i++)
+            {
+                if (_jetables[i].jetable == jetable)
+                    return i;
+            }
+
+            return -1;
         }
 
         public override void OnActivate()
