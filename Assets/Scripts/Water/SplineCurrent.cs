@@ -21,12 +21,17 @@ namespace BoatGame
             _nativeSpline = new NativeSpline(spline.Spline, Allocator.Persistent);
         }
 
+        private void OnDestroy()
+        {
+            _nativeSpline.Dispose();
+        }
+
         private void FixedUpdate()
         {
+            var forceThisFrame = force * Time.fixedDeltaTime;
+
             foreach (var rb in _targets)
             {
-                var forceThisFrame = force * Time.fixedDeltaTime;
-                
                 if (SplineUtility.GetNearestPoint(_nativeSpline, new float3(rb.position), out var nearest, out float t, splineResolution, 1) < splineWidth)
                 {
                     var nextPos = _nativeSpline.EvaluatePosition(t + 0.01f);
