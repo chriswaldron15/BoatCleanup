@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 774076203384253452}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.35355338, y: -0.35355338, z: 0.1464466, w: 0.8535535}
+  m_LocalRotation: {x: 0.42261827, y: 0, z: 0, w: 0.9063079}
   m_LocalPosition: {x: 11.584559, y: 11.471527, z: -11.58456}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -48,7 +48,7 @@ MonoBehaviour:
   <Camera>k__BackingField: {fileID: 8801958979834393846}
   cameraTransform: {fileID: 6398381375841470910}
   followOffset: -1
-  followDistance: 45
+  followDistance: 50
   lerpSpeed: 3
 --- !u!1 &2926185814705522346
 GameObject:

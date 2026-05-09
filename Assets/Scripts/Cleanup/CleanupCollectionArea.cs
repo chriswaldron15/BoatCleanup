@@ -57,7 +57,10 @@ namespace BoatGame
 
             _collectedAmount++;
             UpdateText();
-            Destroy(other.gameObject);
+            
+            if (other.attachedRigidbody != null)
+                Destroy(other.attachedRigidbody.gameObject);
+            else Destroy(other.gameObject);
 
             if (_collectedAmount >= requiredAmount)
             {

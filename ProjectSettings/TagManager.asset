@@ -6,7 +6,6 @@ TagManager:
   tags:
   - Crate
   - VacuumCollectable
-  - Towable
   - WaterJetable
   layers:
   - Default

@@ -2889,7 +2889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1546349065187163386, guid: 11820ef9cf1282346828fa743bcacd3d, type: 3}
       propertyPath: m_TagString
-      value: Towable
+      value: Crate
       objectReference: {fileID: 0}
     - target: {fileID: 2179298999214581312, guid: 11820ef9cf1282346828fa743bcacd3d, type: 3}
       propertyPath: m_LocalRotation.w
@@ -2917,7 +2917,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6465042229609094916, guid: 11820ef9cf1282346828fa743bcacd3d, type: 3}
       propertyPath: m_TagString
-      value: Towable
+      value: Crate
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,8 +5,6 @@ namespace BoatGame
 {
     public class TowCable : Tool
     {
-        private const string TowableTag = "Towable";
-
         [SerializeField] private new Rigidbody rigidbody;
         [SerializeField] private SpringJoint spring;
         [SerializeField] private float detachDistance;
@@ -15,7 +12,7 @@ namespace BoatGame
         [SerializeField] private ToolTarget toolTarget;
         
         private Towable _towTarget;
-        private readonly HashSet<Towable> _targets = new HashSet<Towable>(4);
+        private readonly HashSet<Towable> _targets = new (4);
         private BoatInput _boatInput;
 
         private void Awake()
@@ -41,6 +38,7 @@ namespace BoatGame
             Towable bestTarget = null;
             float bestScore = float.MaxValue;
 
+            _targets.RemoveWhere(VoidTowable);
             foreach (var target in _targets)
             {
                 var score = target.Score();
@@ -74,11 +72,16 @@ namespace BoatGame
             towRopeRenderer.UpdateRenderer(rigidbody, spring.connectedBody);
         }
 
+        private static bool VoidTowable(Towable obj)
+        {
+            return obj == null || obj.IsComplete();
+        }
+
         private void OnTriggerEnter(Collider other)
         {
-            if (!other.CompareTag(TowableTag))
+            if (other.attachedRigidbody == null)
                 return;
-
+            
             if (!other.attachedRigidbody.TryGetComponent(out Towable towable))
                 return;
 
@@ -87,9 +90,9 @@ namespace BoatGame
 
         private void OnTriggerExit(Collider other)
         {
-            if (!other.CompareTag(TowableTag))
+            if (other.attachedRigidbody == null)
                 return;
-
+            
             if (!other.attachedRigidbody.TryGetComponent(out Towable towable))
                 return;
 
@@ -102,6 +105,7 @@ namespace BoatGame
             spring.connectedBody = _towTarget.Rigidbody;
             spring.connectedAnchor = _towTarget.AttachPoint.localPosition;
             toolTarget.Hide();
+            _towTarget.OnAttached();
         }
 
         private void DetachFromCurrentTarget()
@@ -109,13 +113,14 @@ namespace BoatGame
             if (_towTarget != null)
             {
                 spring.connectedBody = null;
+                _towTarget.OnDetached();
                 _towTarget = null;
             }
         }
 
         private void CheckForDetach()
         {
-            if (_boatInput.BoatControls.Fire.WasPressedThisFrame() || Vector3.Distance(transform.position, _towTarget.AttachPoint.position) >= detachDistance)
+            if (_towTarget.IsComplete() || _boatInput.BoatControls.Fire.WasPressedThisFrame() || Vector3.Distance(transform.position, _towTarget.AttachPoint.position) >= detachDistance)
                 DetachFromCurrentTarget();
         }
 

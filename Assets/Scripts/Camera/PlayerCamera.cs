@@ -17,6 +17,8 @@ namespace BoatGame
         
         [SerializeField] private Transform cameraTransform;
         [SerializeField] private float followOffset;
+        [SerializeField] private float lookaheadDistance;
+        [SerializeField] private float lookaheadTopSpeed;
         [SerializeField] private float followDistance;
         [SerializeField] private float lerpSpeed;
 
@@ -66,7 +68,7 @@ namespace BoatGame
             
             var target = lookAt - cameraTransform.forward * followDistance + cameraTransform.up * followOffset;
 
-            Camera.orthographicSize = Mathf.Lerp(Camera.orthographicSize, _targetOrtho, Time.deltaTime * lerpSpeed);
+            //Camera.orthographicSize = Mathf.Lerp(Camera.orthographicSize, _targetOrtho, Time.deltaTime * lerpSpeed);
 
             if (immediate)
                 cameraTransform.position = target;

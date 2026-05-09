@@ -129,6 +129,42 @@ namespace BoatGame
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport1"",
+                    ""type"": ""Button"",
+                    ""id"": ""b93afcea-c703-43dd-a295-e0f272fe60e8"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport2"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb400091-95ae-4c8c-9083-f483d8658f42"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport3"",
+                    ""type"": ""Button"",
+                    ""id"": ""b63cc2ef-b04f-4d8b-a04d-d09aa0969037"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Teleport4"",
+                    ""type"": ""Button"",
+                    ""id"": ""b2f81fd9-c256-4e1e-9fe1-854e077a18e3"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -307,6 +343,50 @@ namespace BoatGame
                     ""action"": ""Fire"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""cbc2e059-2a6e-490c-9e67-303afddea45a"",
+                    ""path"": ""<Keyboard>/1"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Teleport1"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7bb89281-d242-4028-a3ae-4a33ed44d645"",
+                    ""path"": ""<Keyboard>/2"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Teleport2"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""15b5e0fe-0d64-4cdb-b26d-b03ef1c3a9bd"",
+                    ""path"": ""<Keyboard>/3"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Teleport3"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a1e8bc83-bd5c-455c-a1bb-2c4b84ea95b7"",
+                    ""path"": ""<Keyboard>/4"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": "";Keyboard&Mouse"",
+                    ""action"": ""Teleport4"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -380,6 +460,10 @@ namespace BoatGame
             m_BoatControls_Throttle = m_BoatControls.FindAction("Throttle", throwIfNotFound: true);
             m_BoatControls_ScrollTool = m_BoatControls.FindAction("ScrollTool", throwIfNotFound: true);
             m_BoatControls_Fire = m_BoatControls.FindAction("Fire", throwIfNotFound: true);
+            m_BoatControls_Teleport1 = m_BoatControls.FindAction("Teleport1", throwIfNotFound: true);
+            m_BoatControls_Teleport2 = m_BoatControls.FindAction("Teleport2", throwIfNotFound: true);
+            m_BoatControls_Teleport3 = m_BoatControls.FindAction("Teleport3", throwIfNotFound: true);
+            m_BoatControls_Teleport4 = m_BoatControls.FindAction("Teleport4", throwIfNotFound: true);
         }
 
         ~@BoatInput()
@@ -464,6 +548,10 @@ namespace BoatGame
         private readonly InputAction m_BoatControls_Throttle;
         private readonly InputAction m_BoatControls_ScrollTool;
         private readonly InputAction m_BoatControls_Fire;
+        private readonly InputAction m_BoatControls_Teleport1;
+        private readonly InputAction m_BoatControls_Teleport2;
+        private readonly InputAction m_BoatControls_Teleport3;
+        private readonly InputAction m_BoatControls_Teleport4;
         /// <summary>
         /// Provides access to input actions defined in input action map "BoatControls".
         /// </summary>
@@ -491,6 +579,22 @@ namespace BoatGame
             /// Provides access to the underlying input action "BoatControls/Fire".
             /// </summary>
             public InputAction @Fire => m_Wrapper.m_BoatControls_Fire;
+            /// <summary>
+            /// Provides access to the underlying input action "BoatControls/Teleport1".
+            /// </summary>
+            public InputAction @Teleport1 => m_Wrapper.m_BoatControls_Teleport1;
+            /// <summary>
+            /// Provides access to the underlying input action "BoatControls/Teleport2".
+            /// </summary>
+            public InputAction @Teleport2 => m_Wrapper.m_BoatControls_Teleport2;
+            /// <summary>
+            /// Provides access to the underlying input action "BoatControls/Teleport3".
+            /// </summary>
+            public InputAction @Teleport3 => m_Wrapper.m_BoatControls_Teleport3;
+            /// <summary>
+            /// Provides access to the underlying input action "BoatControls/Teleport4".
+            /// </summary>
+            public InputAction @Teleport4 => m_Wrapper.m_BoatControls_Teleport4;
             /// <summary>
             /// Provides access to the underlying input action map instance.
             /// </summary>
@@ -529,6 +633,18 @@ namespace BoatGame
                 @Fire.started += instance.OnFire;
                 @Fire.performed += instance.OnFire;
                 @Fire.canceled += instance.OnFire;
+                @Teleport1.started += instance.OnTeleport1;
+                @Teleport1.performed += instance.OnTeleport1;
+                @Teleport1.canceled += instance.OnTeleport1;
+                @Teleport2.started += instance.OnTeleport2;
+                @Teleport2.performed += instance.OnTeleport2;
+                @Teleport2.canceled += instance.OnTeleport2;
+                @Teleport3.started += instance.OnTeleport3;
+                @Teleport3.performed += instance.OnTeleport3;
+                @Teleport3.canceled += instance.OnTeleport3;
+                @Teleport4.started += instance.OnTeleport4;
+                @Teleport4.performed += instance.OnTeleport4;
+                @Teleport4.canceled += instance.OnTeleport4;
             }
 
             /// <summary>
@@ -552,6 +668,18 @@ namespace BoatGame
                 @Fire.started -= instance.OnFire;
                 @Fire.performed -= instance.OnFire;
                 @Fire.canceled -= instance.OnFire;
+                @Teleport1.started -= instance.OnTeleport1;
+                @Teleport1.performed -= instance.OnTeleport1;
+                @Teleport1.canceled -= instance.OnTeleport1;
+                @Teleport2.started -= instance.OnTeleport2;
+                @Teleport2.performed -= instance.OnTeleport2;
+                @Teleport2.canceled -= instance.OnTeleport2;
+                @Teleport3.started -= instance.OnTeleport3;
+                @Teleport3.performed -= instance.OnTeleport3;
+                @Teleport3.canceled -= instance.OnTeleport3;
+                @Teleport4.started -= instance.OnTeleport4;
+                @Teleport4.performed -= instance.OnTeleport4;
+                @Teleport4.canceled -= instance.OnTeleport4;
             }
 
             /// <summary>
@@ -685,6 +813,34 @@ namespace BoatGame
             /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
             /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
             void OnFire(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Teleport1" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnTeleport1(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Teleport2" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnTeleport2(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Teleport3" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnTeleport3(InputAction.CallbackContext context);
+            /// <summary>
+            /// Method invoked when associated input action "Teleport4" is either <see cref="UnityEngine.InputSystem.InputAction.started" />, <see cref="UnityEngine.InputSystem.InputAction.performed" /> or <see cref="UnityEngine.InputSystem.InputAction.canceled" />.
+            /// </summary>
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.started" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.performed" />
+            /// <seealso cref="UnityEngine.InputSystem.InputAction.canceled" />
+            void OnTeleport4(InputAction.CallbackContext context);
         }
     }
 }
