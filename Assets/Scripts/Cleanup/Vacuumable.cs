@@ -18,8 +18,12 @@ namespace BoatGame
 
             _hasBeenVacuumed = true;
             trigger.enabled = false;
-            
-            transform.DOScale(Vector3.zero, scaleTime).SetEase(scaleEase);
+            transform.DOScale(Vector3.zero, scaleTime).SetEase(scaleEase).OnComplete(OnDisappeared);
+        }
+
+        private void OnDisappeared()
+        {
+            Destroy(gameObject);
         }
     }
 }

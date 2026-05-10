@@ -891,6 +891,7 @@ GameObject:
   - component: {fileID: 6803027035059923148}
   - component: {fileID: 491443389522267322}
   - component: {fileID: 7668427571914378027}
+  - component: {fileID: 6484862989524882180}
   - component: {fileID: 7545018725973429950}
   - component: {fileID: 6958928251189185159}
   - component: {fileID: 5986210864441434469}
@@ -941,6 +942,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.ToolSwitcher
   tools:
   - {fileID: 1380279913303795275}
+  - {fileID: 2442242826386197863}
   - {fileID: 3945283385102064029}
   - {fileID: 5660681484986167382}
 --- !u!114 &491443389522267322
@@ -974,6 +976,23 @@ MonoBehaviour:
   acceleration: 24
   smokeParticles: {fileID: 0}
   particleEmissionRateMinMax: {x: 0, y: 50}
+--- !u!114 &6484862989524882180
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6750076043448006220}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d76148522c8bac145b70ff87b2f34546, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BoatSlowdownController
+  boatThrottle: {fileID: 7668427571914378027}
+  overlapRadius: 2
+  overlapLayerMask:
+    serializedVersion: 2
+    m_Bits: 128
 --- !u!114 &7545018725973429950
 MonoBehaviour:
   m_ObjectHideFlags: 0

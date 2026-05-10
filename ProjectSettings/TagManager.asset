@@ -5,8 +5,8 @@ TagManager:
   serializedVersion: 3
   tags:
   - Crate
-  - VacuumCollectable
   - WaterJetable
+  - Slowdown
   layers:
   - Default
   - TransparentFX

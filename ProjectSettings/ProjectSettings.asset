@@ -948,11 +948,11 @@ PlayerSettings:
   captureStartupLogs: {}
   activeInputHandler: 1
   windowsGamepadBackendHint: 0
-  cloudProjectId: 7c74e2d8-4d5c-49cb-90af-c6fed5c18658
+  cloudProjectId: 48ab732b-85e4-4ca3-b8af-14e6aba80908
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
   projectName: Boat Cleanup
-  organizationId: chris-waldron-games
+  organizationId: curveball-games
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
   hmiLoadingImage: {fileID: 0}

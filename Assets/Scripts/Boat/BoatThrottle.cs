@@ -17,6 +17,8 @@ namespace BoatGame
         private float _force;
         private float _inputValue;
 
+        public float SpeedMultiplier { get; set; } = 1f;
+
         private void Awake()
         {
             _boatInput = new();
@@ -28,6 +30,7 @@ namespace BoatGame
             _inputValue = _boatInput.BoatControls.Throttle.ReadValue<float>();
             
             var targetSpeed = _inputValue < 0 ? -topReverseSpeed : _inputValue * topSpeed;
+            targetSpeed *= SpeedMultiplier;
             _force = Mathf.MoveTowards(_force, targetSpeed, Time.deltaTime * acceleration);
             
             UpdateParticles(targetSpeed);

@@ -1,11 +1,13 @@
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 namespace BoatGame
 {
     public class TriggerEnterManager<T> where T : MonoBehaviour
     {
-        private Dictionary<T, int> triggerCounts = new();
+        private readonly Dictionary<T, int> triggerCounts = new();
+        public List<T> All { get; set; } = new();
         
         /// <summary>
         /// Returns true if this entity is entering the trigger for the first time.
@@ -20,6 +22,7 @@ namespace BoatGame
             }
             
             triggerCounts.Add(entity, 1);
+            All.Add(entity);
             return true;
         }
 
@@ -35,13 +38,13 @@ namespace BoatGame
                 if (count == 0)
                 {
                     triggerCounts.Remove(entity);
+                    All.RemoveSwapBack(entity);
                     return true;
                 }
 
                 if (count < 0)
-                {
                     Debug.LogError($"Entity exited a trigger and its count was below zero at {count}", entity);
-                }
+                else triggerCounts[entity] = count;
                 
                 return false;
             }
