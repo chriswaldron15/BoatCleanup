@@ -1,3 +1,4 @@
+using System;
 using DG.Tweening;
 using NaughtyAttributes;
 using TMPro;
@@ -83,6 +84,11 @@ namespace BoatGame
         private void UpdateText()
         {
             amountRemainingText.text = $"x{requiredAmount - _collectedAmount}";
+        }
+
+        private void OnValidate()
+        {
+            UpdateText();
         }
     }
 }

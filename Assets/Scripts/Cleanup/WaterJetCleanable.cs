@@ -1,6 +1,7 @@
 using System;
 using NaughtyAttributes;
 using UnityEngine;
+using UnityEngine.Events;
 
 namespace BoatGame
 {
@@ -11,6 +12,7 @@ namespace BoatGame
         [SerializeField] private float requiredJetTime = 1f;
         [SerializeField, Range(0f, 0.99f)] private float startCleanAmount;
         [SerializeField] private new Renderer renderer;
+        [SerializeField] private UnityEvent onComplete;
 
         private float _cleanTime;
 
@@ -24,6 +26,9 @@ namespace BoatGame
             _cleanTime += Time.deltaTime;
             _cleanTime = Mathf.Clamp(_cleanTime, 0f, requiredJetTime);
             UpdateMaterial();
+            
+            if (IsComplete())
+                onComplete?.Invoke();
         }
 
         public override bool IsComplete()
