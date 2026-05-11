@@ -12,7 +12,6 @@ namespace BoatGame
         [SerializeField] private float requiredJetTime = 1f;
         [SerializeField, Range(0f, 0.99f)] private float startCleanAmount;
         [SerializeField] private new Renderer renderer;
-        [SerializeField] private UnityEvent onComplete;
 
         private float _cleanTime;
 

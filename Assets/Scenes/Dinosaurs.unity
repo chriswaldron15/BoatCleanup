@@ -187,11 +187,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 492190763}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 492190763}
+  shrinkRate: 0.5
 --- !u!135 &71492447
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -221,14 +221,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71492444}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -105.86, y: 5.94, z: 65.16}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 492190763}
   - {fileID: 113593430}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &84561081
 GameObject:
@@ -800,11 +800,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 2029196681}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 2029196681}
+  shrinkRate: 0.5
 --- !u!135 &171996927
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -834,14 +834,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 171996924}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -114.53, y: 5.94, z: 21.01}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2029196681}
   - {fileID: 85928094}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &177847667
 PrefabInstance:
@@ -2937,11 +2937,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 1014073174}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 1014073174}
+  shrinkRate: 0.5
 --- !u!135 &593608679
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -2978,7 +2978,7 @@ Transform:
   m_Children:
   - {fileID: 1014073174}
   - {fileID: 320262239}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: -159.685, z: 0}
 --- !u!4 &595384724 stripped
 Transform:
@@ -3042,6 +3042,75 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 381985f68301c9f4eb67e17e8504be72, type: 3}
+--- !u!1 &620019660
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 620019662}
+  - component: {fileID: 620019661}
+  m_Layer: 0
+  m_Name: BoneStackCompletionManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &620019661
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620019660}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c6ee06e4ed7723248b31fe412015f7c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.CleanupCompletionManager
+  targets:
+  - {fileID: 1202750530}
+  - {fileID: 71492446}
+  - {fileID: 1651678936}
+  - {fileID: 593608678}
+  - {fileID: 1304289108}
+  - {fileID: 959819615}
+  - {fileID: 1482971339}
+  - {fileID: 171996926}
+  onAllComplete:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2111749637}
+        m_TargetAssemblyTypeName: BoatGame.ImpulseApplier, Assembly-CSharp
+        m_MethodName: Fire
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: 
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  popUpPrefab: {fileID: 5413203043004881849, guid: e595cb4d25b0b3344b5c6f4703093bef, type: 3}
+--- !u!4 &620019662
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 620019660}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &630928726
 GameObject:
   m_ObjectHideFlags: 0
@@ -4679,11 +4748,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 230355907}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 230355907}
+  shrinkRate: 0.5
 --- !u!135 &959819616
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -4713,14 +4782,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 959819613}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -68.66, y: 5.94, z: 41.67}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 230355907}
   - {fileID: 1423588482}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &962595884
 GameObject:
@@ -6358,11 +6427,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 2029169445}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 2029169445}
+  shrinkRate: 0.5
 --- !u!135 &1202750531
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -6392,14 +6461,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1202750528}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -74.49, y: 5.94, z: -9.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2029169445}
   - {fileID: 1362221961}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1213438295
 GameObject:
@@ -6612,14 +6681,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1304289105}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -53.9, y: 5.94, z: 26.8}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 578212889}
   - {fileID: 975151360}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!135 &1304289107
 SphereCollider:
@@ -6654,11 +6723,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 578212889}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 578212889}
+  shrinkRate: 0.5
 --- !u!54 &1304289109
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7791,11 +7860,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 1956407838}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 1956407838}
+  shrinkRate: 0.5
 --- !u!135 &1482971340
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -7825,14 +7894,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1482971337}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -98.81, y: 5.94, z: 2.52}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1956407838}
   - {fileID: 2138306130}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1570150844
 GameObject:
@@ -8162,11 +8231,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1cef1b76f45cab048a151ebdf4c9d7be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.WaterJetShrinkable
-  target: {fileID: 1168604500}
-  shrinkRate: 0.5
   onComplete:
     m_PersistentCalls:
       m_Calls: []
+  target: {fileID: 1168604500}
+  shrinkRate: 0.5
 --- !u!135 &1651678937
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -8203,7 +8272,7 @@ Transform:
   m_Children:
   - {fileID: 1168604500}
   - {fileID: 654890059}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1723494098}
   m_LocalEulerAnglesHint: {x: 0, y: -387.27, z: 0}
 --- !u!1 &1683543020
 GameObject:
@@ -8533,6 +8602,15 @@ Transform:
   m_Children:
   - {fileID: 1037775162}
   - {fileID: 1117323626}
+  - {fileID: 1304289106}
+  - {fileID: 1482971341}
+  - {fileID: 71492448}
+  - {fileID: 171996928}
+  - {fileID: 959819617}
+  - {fileID: 1651678938}
+  - {fileID: 1202750532}
+  - {fileID: 593608680}
+  - {fileID: 2111749634}
   m_Father: {fileID: 1287005783}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1732659155
@@ -10508,6 +10586,197 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 2414575761861873646, guid: 381985f68301c9f4eb67e17e8504be72, type: 3}
   m_PrefabInstance: {fileID: 1172409465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2111749633
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2111749634}
+  - component: {fileID: 2111749641}
+  - component: {fileID: 2111749640}
+  - component: {fileID: 2111749639}
+  - component: {fileID: 2111749638}
+  - component: {fileID: 2111749637}
+  - component: {fileID: 2111749636}
+  - component: {fileID: 2111749635}
+  m_Layer: 7
+  m_Name: Battery (1)
+  m_TagString: Battery
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2111749634
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: 0.6426641, z: -0, w: 0.7661481}
+  m_LocalPosition: {x: -87, y: 6.582, z: 54.7}
+  m_LocalScale: {x: 2, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1723494098}
+  m_LocalEulerAnglesHint: {x: 0, y: 79.982, z: 0}
+--- !u!114 &2111749635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69ae9d49d533bab40bfd13ec995f8658, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.InWaterStateDetector
+--- !u!114 &2111749636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4470de216ccae094890a8fd4168a5597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.BuoyancyAndWaterDragApplier
+  rigidbody: {fileID: 2111749638}
+  waterDamping: 2
+  waterAngularDamping: 1
+  pushDepthRange: {x: -2, y: 2}
+  buoyancyPushStrength: 25
+  waterStateDetector: {fileID: 2111749635}
+  treatAsAlwaysInWater: 0
+  waterMaterial: {fileID: 2100000, guid: 1f1c620af8b8e184e8da4e7994692caf, type: 2}
+--- !u!114 &2111749637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd34647c8ea37e498918b7f53aa42a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::BoatGame.ImpulseApplier
+  worldDirection: {x: 0.093765706, y: 0.70713776, z: -0.7008311}
+  rigidbody: {fileID: 2111749638}
+  force: 50
+  mode: 1
+--- !u!54 &2111749638
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  serializedVersion: 5
+  m_Mass: 5
+  m_LinearDamping: 0.1
+  m_AngularDamping: 0.1
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 1
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &2111749639
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!23 &2111749640
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RayTracingAccelStructBuildFlagsOverride: 0
+  m_RayTracingAccelStructBuildFlags: 1
+  m_SmallMeshCulling: 1
+  m_ForceMeshLod: -1
+  m_MeshLodSelectionBias: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: cfdf048515f00f4428c0549d5b1bcbdb, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_GlobalIlluminationMeshLod: 0
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_MaskInteraction: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &2111749641
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2111749633}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!1001 &2130279658
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10921,11 +11190,4 @@ SceneRoots:
   - {fileID: 130780163}
   - {fileID: 27877098533534404}
   - {fileID: 1287005783}
-  - {fileID: 1304289106}
-  - {fileID: 1482971341}
-  - {fileID: 71492448}
-  - {fileID: 171996928}
-  - {fileID: 959819617}
-  - {fileID: 1651678938}
-  - {fileID: 1202750532}
-  - {fileID: 593608680}
+  - {fileID: 620019662}

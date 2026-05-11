@@ -34,14 +34,6 @@ namespace BoatGame
 
         private void LateUpdate()
         {
-            var pos = uiParent.transform.position;
-            pos.y = 0f;
-
-            var camPos = PlayerCamera.Instance.Camera.transform.position;
-            camPos.y = 0f;
-            
-            uiParent.transform.forward = pos - camPos;
-            
             icon.Rotate(Vector3.up, rotationSpeed * Time.deltaTime);
         }
 

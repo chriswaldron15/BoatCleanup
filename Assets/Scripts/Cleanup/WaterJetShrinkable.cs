@@ -7,7 +7,6 @@ namespace BoatGame
     {
         [SerializeField] private Transform target;
         [SerializeField] private float shrinkRate;
-        [SerializeField] private UnityEvent onComplete;
         
         private float _scale = 1f;
         private Vector3 _startScale;
@@ -21,9 +20,12 @@ namespace BoatGame
         {
             _scale = Mathf.Clamp01(_scale - Time.fixedDeltaTime * shrinkRate);
             target.localScale = _startScale * _scale;
-            
+
             if (IsComplete())
+            {
+                target.localScale = Vector3.zero;
                 onComplete?.Invoke();
+            }
         }
 
         public override bool IsComplete()
