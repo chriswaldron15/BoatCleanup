@@ -9,8 +9,10 @@ namespace BoatGame
     public class SplineCurrent : MonoBehaviour
     {
         [SerializeField] private float force;
+        public float Force => force;
         [SerializeField] private SplineContainer spline;
         [SerializeField] private float splineWidth;
+        public float SplineWidth => splineWidth;
         [SerializeField] private int splineResolution = 1;
         
         private readonly HashSet<Rigidbody> _targets = new();

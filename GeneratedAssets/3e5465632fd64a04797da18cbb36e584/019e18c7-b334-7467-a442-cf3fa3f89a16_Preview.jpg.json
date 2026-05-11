@@ -1,0 +1,12 @@
+{
+    "asset": "3e5465632fd64a04797da18cbb36e584",
+    "fileName": "019e18c7-b334-7467-a442-cf3fa3f89a16_Preview.jpg",
+    "prompt": "Stylized hand-painted water current texture, blue and white swirling ripples, seamless, tileable, top-down view, clean vector art style, simple shapes.",
+    "negativePrompt": "",
+    "model": "hand-painted-textures-2-0",
+    "modelName": "Hand Painted Textures 2.0",
+    "customSeed": 2070891317,
+    "w3CTraceId": "",
+    "feedback": 0,
+    "refinementMode": "Generation"
+}
