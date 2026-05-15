@@ -195,8 +195,8 @@ SphereCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Radius: 18.56
-  m_Center: {x: 3.29, y: 0, z: -7.7}
+  m_Radius: 23.73325
+  m_Center: {x: 3.3325987, y: 4.709811, z: -7.667756}
 --- !u!114 &3836099234916229062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,7 +211,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::BoatGame.SplineCurrent
   force: 1200
   spline: {fileID: 294108138701762555}
-  splineWidth: 4
+  splineWidth: 2
   splineResolution: 1
 --- !u!120 &7841552712618141238
 LineRenderer:
@@ -318,7 +318,7 @@ LineRenderer:
       m_Curve:
       - serializedVersion: 3
         time: 0
-        value: 4
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
@@ -327,7 +327,7 @@ LineRenderer:
         outWeight: 0.33333334
       - serializedVersion: 3
         time: 1
-        value: 4
+        value: 2
         inSlope: 0
         outSlope: 0
         tangentMode: 0
